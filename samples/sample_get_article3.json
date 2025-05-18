@@ -1,0 +1,16 @@
+{
+  "action": "getArticles",
+  "conceptUri": "http://en.wikipedia.org/wiki/George_Clooney",
+  "sourceLocationUri": [
+    "http://en.wikipedia.org/wiki/Germany",
+    "http://en.wikipedia.org/wiki/Los_Angeles_County,_California"
+  ],
+  "articlesPage": 1,
+  "articlesCount": 100,
+  "articlesSortBy": "date",
+  "articlesSortByAsc": false,
+  "articlesArticleBodyLen": -1,
+  "resultType": "articles",
+  "apiKey": "YOUR_API_KEY",
+  "forceMaxDataTimeWindow": 31
+}

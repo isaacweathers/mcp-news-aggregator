@@ -1,0 +1,11 @@
+{
+  "resultType": "events",
+  "sourceUri": "bbc.co.uk",
+  "eventsPage": 1,
+  "eventsCount": 50,
+  "minArticlesInEvent": 30,
+  "eventsSortBy": "date",
+  "eventsSortByAsc": false,
+  "apiKey": "YOUR_API_KEY",
+  "forceMaxDataTimeWindow": 31
+}

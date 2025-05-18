@@ -1,0 +1,32 @@
+{
+  "action": "getArticles",
+  "query": {
+    "$query": {
+      "$and": [
+        {
+          "dateStart": "2017-04-22",
+          "dateEnd": "2017-04-22",
+          "categoryUri": "dmoz/Business"
+        },
+        {
+          "$or": [
+            {
+              "conceptUri": "http://en.wikipedia.org/wiki/Barack_Obama"
+            },
+            {
+              "keyword": "Trump"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "articlesPage": 1,
+  "articlesCount": 100,
+  "articlesSortBy": "socialScore",
+  "articlesSortByAsc": false,
+  "articlesArticleBodyLen": -1,
+  "includeArticleSocialScore": true,
+  "resultType": "articles",
+  "apiKey": "YOUR_API_KEY"
+}

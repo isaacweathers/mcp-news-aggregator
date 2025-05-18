@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mcp_server:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+      # Add a volume for ChromaDB data if you want it to persist
+      # - chromadb_data:/app/chroma_data 
+    # environment:
+      # - CHROMA_DB_PATH=/app/chroma_data
+
+# volumes:
+#   chromadb_data:

@@ -1,0 +1,40 @@
+{
+  "query": {
+    "$query": {
+      "$or": [
+        {
+          "dateStart": "2017-02-05",
+          "dateEnd": "2017-02-05"
+        },
+        {
+          "conceptUri": "http://en.wikipedia.org/wiki/Donald_Trump"
+        },
+        {
+          "categoryUri": "dmoz/Society/Politics"
+        },
+        {
+          "$and": [
+            {
+              "conceptUri": "http://en.wikipedia.org/wiki/Angela_Merkel"
+            },
+            {
+              "categoryUri": "dmoz/Business"
+            }
+          ]
+        }
+      ],
+      "$not": {
+        "$or": [
+          {
+            "sourceUri": "bbc.com"
+          },
+          {
+            "conceptUri": "http://en.wikipedia.org/wiki/Barack_Obama"
+          }
+        ]
+      }
+    }
+  },
+  "resultType": "articles",
+  "apiKey": "YOUR_API_KEY"
+}

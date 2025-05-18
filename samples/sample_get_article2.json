@@ -1,0 +1,31 @@
+{
+  "action": "getArticles",
+  "keyword": [
+    "Barack",
+    "Obama"
+  ],
+  "keywordOper": "and",
+  "lang": [
+    "eng",
+    "deu"
+  ],
+  "ignoreKeyword": [
+    "Michelle",
+    "Sasha"
+  ],
+  "startSourceRankPercentile": 0,
+  "endSourceRankPercentile": 30,
+  "articlesPage": 1,
+  "articlesCount": 30,
+  "articlesSortBy": "sourceImportance",
+  "articlesSortByAsc": false,
+  "articlesArticleBodyLen": -1,
+  "includeArticleConcepts": true,
+  "includeArticleCategories": true,
+  "includeArticleImage": true,
+  "includeArticleSocialScore": true,
+  "includeArticleLocation": true,
+  "resultType": "articles",
+  "apiKey": "YOUR_API_KEY",
+  "forceMaxDataTimeWindow": 31
+}

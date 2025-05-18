@@ -1,0 +1,11 @@
+{
+  "resultType": "events",
+  "conceptUri": "http://en.wikipedia.org/wiki/Barack_Obama",
+  "eventsPage": 1,
+  "eventsCount": 50,
+  "eventsSortBy": "rel",
+  "eventsSortByAsc": false,
+  "eventsArticleBodyLen": -1,
+  "apiKey": "YOUR_API_KEY",
+  "forceMaxDataTimeWindow": 31
+}
