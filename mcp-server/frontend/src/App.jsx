@@ -11,22 +11,51 @@ function App() {
   // Fetch groups
   useEffect(() => {
     setLoading(true);
-    fetch(`${API_BASE}/group_by/?field=${groupField}`)
-      .then((res) => res.json())
-      .then((data) => setGroups(data))
+    const urlToFetch = `${API_BASE}/group_by/?field=${groupField}`;
+    console.log(`Fetching groups from: ${urlToFetch}`);
+    fetch(urlToFetch)
+      .then((res) => {
+        console.log(`Response status from ${urlToFetch}:`, res.status); // Corrected log
+        if (!res.ok) {
+          res.text().then(text => console.error(`Error response body from ${urlToFetch}:`, text));
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(`Data received from ${urlToFetch}:`, data); // Corrected log
+        setGroups(data);
+      })
+      .catch(error => {
+        console.error(`Error fetching or parsing data from ${urlToFetch}:`, error);
+      })
       .finally(() => setLoading(false));
   }, [groupField]);
 
   // Fetch summary
   const fetchSummary = (field, value) => {
     setLoading(true);
-    let url = `${API_BASE}/summarize/`;
+    let urlToFetch = `${API_BASE}/summarize/`; // Renamed for consistency
     if (field && value) {
-      url += `?field=${field}&value=${encodeURIComponent(value)}`;
+      urlToFetch += `?field=${field}&value=${encodeURIComponent(value)}`;
     }
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setSummary(data.summary || []))
+    console.log(`Fetching summary from: ${urlToFetch}`);
+    fetch(urlToFetch)
+      .then((res) => {
+        console.log(`Response status from ${urlToFetch}:`, res.status); // Corrected log
+        if (!res.ok) {
+          res.text().then(text => console.error(`Error response body from ${urlToFetch}:`, text));
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(`Data received from ${urlToFetch}:`, data.summary); // Corrected log
+        setSummary(data.summary || []);
+      })
+      .catch(error => {
+        console.error(`Error fetching or parsing data from ${urlToFetch}:`, error);
+      })
       .finally(() => setLoading(false));
   };
 
